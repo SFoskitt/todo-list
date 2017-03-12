@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   handleGetQuestions() {
-    fetch('http://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple')
     .then(response => { 
       if(response.ok){
         return response.json();
