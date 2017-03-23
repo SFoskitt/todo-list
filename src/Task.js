@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 
 class Task extends Component {
     render () {
-      return <li>{this.props.title}</li>
+      return (
+        <div className="task">
+          <li>{this.props.title}</li>
+        </div>
+      )
+      
     }
 }
 

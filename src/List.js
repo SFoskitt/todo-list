@@ -10,13 +10,15 @@ class List extends Component {
   render() {
     return (
       <div>
-        {/* temp hold tasks list while quiz questions */}
-        {/*{this.props.tasks.map(task => {
-          return <Task key={task.id} title={task.title} />
-        })}*/}
-        {this.props.questions.map((question) => {
-          return <Task title={question.question} />
-        })}
+        <ul className="list">
+          {/* temp hold tasks list while quiz questions */}
+          {/*{this.props.tasks.map(task => {
+            return <Task key={task.id} title={task.title} />
+          })}*/}
+          {this.props.questions.map((question) => {
+            return <Task key={question.question} title={question.question} />
+          })}
+        </ul>
       </div>
     )
   }
