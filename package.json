@@ -18,6 +18,5 @@
     "eject": "react-scripts eject"
   },
   "_comment": {
-    "proxy": "http://opentdb.com"
   }
 }
