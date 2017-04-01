@@ -15,9 +15,9 @@ class List extends Component {
           {/*{this.props.tasks.map(task => {
             return <Task key={task.id} title={task.title} />
           })}*/}
-          {this.props.questions.map((question) => {
+          {/*{this.props.questions.map((question) => {
             return <Task key={question.question} title={question.question} />
-          })}
+          })}*/}
         </ul>
       </div>
     )

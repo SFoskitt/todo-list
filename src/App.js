@@ -14,29 +14,14 @@ class App extends Component {
   }
 
   handleGetQuestions() {
-    let url = 'https://checkvist.com/checklists/603780/tasks.json';
-    let headers = {
-      'accept': 'application/json',
-      'authorization': 'Basic ZGV2ZWxvcGRoYXJtYUBnbWFpbC5jb206aG90dHViMjIy',
-      'content-type': 'application/json'
-    }
-    fetch(url, {
-      headers: {
-        'origin': 'http://localhost:9000',
-        'accept': 'application/json',
-        'authorization': 'Basic ZGV2ZWxvcGRoYXJtYUBnbWFpbC5jb206aG90dHViMjIy',
-        'content-type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS'
-      }
-    })
-    .then(response => { 
-      if(response.ok){
-        return response.json();
-      }
-    })
+    fetch('/tasks')
+    // .then(response => { 
+    //   if(response.ok){
+    //     return response.json();
+    //   }
+    // })
     .then(data => {
+      console.log('data in fetch', data);
       this.setState({
         questions: data.results
       })
