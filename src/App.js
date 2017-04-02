@@ -15,29 +15,14 @@ class App extends Component {
 
   handleGetQuestions() {
     fetch('/tasks')
-    // .then(response => { 
-    //   if(response.ok){
-    //     return response.json();
-    //   }
-    // })
     .then(data => {
       console.log('data in fetch', data);
       this.setState({
         questions: data.results
       })
+      console.log('this.state', this.state);
     });
   }
-
-
-  /*
-  fetch('/users', {
-  headers: {
-    'accept': 'application/json',
-    'authorization': 'Basic ' + btoa(process.env.REACT_APP_USERNAME + ':' + process.env.REACT_APP_PASSWORD),
-    'content-type': 'application/vnd.api+json',
-  },
-});
-  */
 
   render() {
     return (
