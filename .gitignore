@@ -17,3 +17,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+// THESE WERE REMOVED FROM SERVER PACKAGE.JSON
+// "private": true,
+// scripts
+    // "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
+    // "lint": "eslint ."
+
+// dependencies
+    // "sql.js": "0.3.2"
+
+// "devDependencies"
+    // "eslint": "3.15.0",
+    // "eslint-config-airbnb": "14.1.0",
+    // "eslint-plugin-import": "2.2.0",
+    // "eslint-plugin-jsx-a11y": "4.0.0",
+    // "eslint-plugin-react": "6.9.0"
