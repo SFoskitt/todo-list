@@ -2,62 +2,23 @@ import React, { Component } from 'react';
 import Task from './Task';
 
 class List extends Component {
-
-  componentDidMount() {
-    this.props.getQuestions();
+  
+  componentWillMount() {
+    this.props.getTasks();
   }
 
   render() {
+    console.log('this.props.tasks List.js', this.props.tasks);
     return (
       <div>
         <ul className="list">
-          {/* temp hold tasks list while quiz questions */}
-          {/*{this.props.tasks.map(task => {
-            return <Task key={task.id} title={task.title} />
-          })}*/}
-          {/*{this.props.questions.map((question) => {
-            return <Task key={question.question} title={question.question} />
-          })}*/}
+          {this.props.tasks.map(task => {
+            return <Task key={task.id} title={task.content} />
+          })}
         </ul>
       </div>
     )
   }
-
-  // constructor () {
-  //   super();
-    // var ans;
-    // fetch('/api.php?amount=5&category=17&difficulty=easy&type=multiple')
-    //   .then(response => { 
-    //     if(response.ok){
-    //       return response.json();
-    //     }
-    //   })
-    //   .then(data => {
-    //     console.log('data.results', data.results);
-    //     ans = data.results;
-    //   });
-    //   console.log('ans?', ans);
-    //   this.state = {
-    //     questions: ans
-    //   }
-  // }
-
-  // componentWillMount(){
-    // fetch('/api.php?amount=5&category=17&difficulty=easy&type=multiple')
-    // .then(response => { 
-    //   if(response.ok){
-    //     return response.json();
-    //   }
-    // })
-    // .then(data => {
-    //   console.log('data.results', data.results);
-    //   this.ans = data.results;
-    //   // this.state = {
-    //   //   questions: data.results
-    //   // }
-    // })
-  // }
-
 }
 
 export default List;

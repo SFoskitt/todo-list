@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 import List from './List';
-// temp hold tasks data while quiz questions
-// import { tasks } from './tasks_data';
 
 class App extends Component {
   constructor(){
     super();
+
     this.state = {
-      questions: []
+      tasks: []
     }
-    this.handleGetQuestions = this.handleGetQuestions.bind(this);
+    this.handleGetTasks = this.handleGetTasks.bind(this);
   }
 
-  handleGetQuestions() {
+  handleGetTasks() {
     fetch('/tasks')
     .then(response => {
       return response.json();
     })
     .then(data => {
-      console.log('data in fetch', data);
-      // this.setState({
-      //   questions: data.results
-      // })
-      // console.log('this.state', this.state);
+      this.setState({
+        tasks: data
+      })
     })
     .catch(error => {
       console.error(error);
@@ -40,9 +37,7 @@ class App extends Component {
           <span>It's not a task list - it's quiz questions until I say otherwise.</span>
         </div>
         <div className="Outer-lsit">
-          <List getQuestions={this.handleGetQuestions} questions={this.state.questions} />
-          {/* temp hold data forward to List while quiz questions */}
-          {/* <List tasks={this.state.tasks}/> */}
+          <List getTasks={this.handleGetTasks} tasks={this.state.tasks} />
         </div>
       </div>
     );
