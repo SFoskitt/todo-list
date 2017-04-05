@@ -15,12 +15,18 @@ class App extends Component {
 
   handleGetQuestions() {
     fetch('/tasks')
+    .then(response => {
+      return response.json();
+    })
     .then(data => {
       console.log('data in fetch', data);
-      this.setState({
-        questions: data.results
-      })
-      console.log('this.state', this.state);
+      // this.setState({
+      //   questions: data.results
+      // })
+      // console.log('this.state', this.state);
+    })
+    .catch(error => {
+      console.error(error);
     });
   }
 

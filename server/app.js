@@ -33,6 +33,11 @@ app.get('/tasks', (req, res) => {
     if(body){ 
       console.log('body in callback', body)
       res.json(body);
+      res.body = body;
+      console.log('res.body *** ', res.body);
+      // response.writeHead(200, {"Content-Type": "text/plain"});
+      // response.write(body);
+      // response.end('END RESPONSE');
     }
     if(error){ console.log('error', error)}
   });
