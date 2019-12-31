@@ -8,19 +8,28 @@ class App extends Component {
 
     this.state = {
       tasks: []
-    }
+    };
     this.handleGetTasks = this.handleGetTasks.bind(this);
   }
 
+  // Access-Control-Allow-Origin
   handleGetTasks() {
-    fetch('/tasks')
+    fetch('http://localhost:9000/tasks', {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
     .then(response => {
+      console.log('response', response);
       return response.json();
     })
     .then(data => {
       this.setState({
         tasks: data
-      })
+      });
     })
     .catch(error => {
       console.error(error);

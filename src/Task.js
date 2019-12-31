@@ -6,8 +6,7 @@ class Task extends Component {
         <div className="task">
           <li>{this.props.title}</li>
         </div>
-      )
-      
+      );      
     }
 }
 
